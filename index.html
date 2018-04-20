@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Catdog</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+	  
+	  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+	   <link rel="stylesheet" href="css/snazzy-info-window.css">
+       <link rel="stylesheet" href="css/main.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+	   <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5Z8U89VL10M981hEIk6M23wbgkVVxzjo&libraries=places&callback=initAutocomplete"></script>      
+      <script defer async src="js/snazzy-info-window.min.js"></script>
+	  <script src="js/main.js"></script>
+	  <script src="js/map-style.js"></script>
+	  <script src="js/search.js"></script>	
+	  <script src="js/info.js"></script>
+	  <script src="js/geo.js"></script>
+
+  </head>
+    
+    
+  
+<body>
+	
+    <div id="coord">    
+    <input type="text" id="lat">
+    <input type="text" id="long">
+    <input type="text" id="posit">
+    <div id="btnConfirm"></div>
+    </div>
+        
+
+
+	<div id="animalSelect">
+    <div id="selected"></div>
+	</div>
+	
+
+	
+	<div id="controls">
+        <input id="pac-input" class="controls" type="text" placeholder="Buscar">
+        <button><a id="geo" onClick="geoLoc()">Tu ubicación</a></button>	
+        <button><a id="submit">Guardar</a></button>	
+        <button><a id="erase" onClick="deleteMarkers()">Borrar</a></button>
+    </div>
+        
+        
+        
+        
+<div id="map"></div>
+         
+             
+<div id="info"> 	  
+<p class="street"></p>	
+<p class="number"></p>	
+<p class="city"></p>  
+    
+<input type="file" accept="image/*" capture="camera" id="camera">
+<img id="frame" width="250" height="250">
+
+<script>////// foto //////////
+      var camera = document.getElementById('camera');
+      var frame = document.getElementById('frame');
+      camera.addEventListener('change', function(e) {
+    var file = e.target.files[0]; 
+    // Do something with the image file.
+    frame.src = URL.createObjectURL(file);
+  });////// foto //////////
+</script>           
+</div>	
+        
+  
+ <div id="clear"></div>  
+        
+    
+</body>
+	   
+	
+</html>
